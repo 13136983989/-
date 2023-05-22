@@ -13,8 +13,7 @@ export PYOPENGL_PLATFORM=osmesa
 conda activate animatable_nerf
 ```
 # 步骤：
-## 预估图片关键点信息 `(已经完成)`
-[参考网址](https://chingswy.github.io/easymocap-public-doc/quickstart/keypoints.html#mediapipe)
+## 预估图片关键点信息 `(已经完成)` [教程参考网址](https://chingswy.github.io/easymocap-public-doc/quickstart/keypoints.html#mediapipe)
 推荐用Mediapipe:
 ```
 #Run the detection of full body:
