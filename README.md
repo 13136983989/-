@@ -13,6 +13,8 @@ export PYOPENGL_PLATFORM=osmesa
 conda activate animatable_nerf
 ```
 # 步骤：
+## 预估图片关键点信息 `(已经完成)`
+[参考网址](https://chingswy.github.io/easymocap-public-doc/quickstart/keypoints.html#mediapipe)
 ## EasyMocap预估SMPL参数 `(已经完成)`
 1. 先用设置data路径
 ```
