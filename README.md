@@ -13,13 +13,13 @@ export PYOPENGL_PLATFORM=osmesa
 conda activate animatable_nerf
 ```
 # 步骤：
-## 预估图片关键点信息 `(已经完成)` [教程参考网址](https://chingswy.github.io/easymocap-public-doc/quickstart/keypoints.html#mediapipe)
+## EasyMocap预估图片关键点信息[教程参考网址](https://chingswy.github.io/easymocap-public-doc/quickstart/keypoints.html#mediapipe)
 推荐用Mediapipe:
 ```
 #Run the detection of full body:
 python3 apps/preprocess/extract_keypoints.py ${data} --mode mp-holistic
 ```
-## EasyMocap预估SMPL参数 `(已经完成)`
+## EasyMocap预估SMPL参数
 1. 先用设置data路径
 ```
 data=/home/zhaozisong/EasyMocap/data/new/
@@ -29,6 +29,11 @@ data=/home/zhaozisong/EasyMocap/data/new/
 python3 apps/demo/mocap.py ${data} --work internet
 ```
 得到`output-smpl-3d\`文件夹下的全部文件。
+## EasyMocap获取图片mask
+```
+# render mask
+python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-d0.05 --ranges 0 1400 1
+```
 ## 脚本提取预估的SMPL参数获取params和vertives
 1. 用[脚本](https://github.com/zju3dv/neuralbody/blob/master/zju_smpl/easymocap_to_neuralbody.py)处理得到的`output-smpl-3d/smpl`文件夹下的.json文件，获取params和vertices
    ```
