@@ -53,7 +53,7 @@ python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-
     python easymocap_to_neuralbody.py --input_dir {data_dir} --type annots
     ```
 ## 脚本获取lbs文件夹下的相关文件
-1. 用[脚本a](https://github.com/zju3dv/animatable_nerf/blob/master/tools/custom_dataset/prepare_blend_weights.py)和[脚本b](https://github.com/zju3dv/animatable_nerf/blob/master/tools/custom_dataset/prepare_lbs_meta.py)来获取和lbs相关的.npy文件
+1. 用[脚本a](https://github.com/zju3dv/animatable_nerf/blob/master/tools/custom_dataset/prepare_blend_weights.py)和[脚本b](https://github.com/zju3dv/animatable_nerf/blob/master/tools/custom_dataset/prepare_lbs_meta.py)分别来获取和lbs相关的.npy文件
 
       问题：
 
