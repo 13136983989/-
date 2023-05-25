@@ -25,6 +25,8 @@ python3 apps/preprocess/extract_keypoints.py ${data} --mode mp-holistic
 ```
 ## EasyMocap预估SMPL参数
 1. 提取extri和intri配置文件&&预估单目视频的SMPL参数
+1.1. 提取extri和intri配置文件不需要跑完程序 只需要获取到extri和intri配置文件就可停止
+1.2. 预估单目视频的SMPL参数需要跑完整个程序
 ```
 #单目视频
 python3 apps/demo/mocap.py ${data} --work internet
