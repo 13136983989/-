@@ -29,7 +29,7 @@ python3 apps/preprocess/extract_keypoints.py ${data} --mode mp-holistic
 #单目视频
 python3 apps/demo/mocap.py ${data} --work internet
 #多目视频 ranges:0-图片的最大值
-python3 apps/demo/mocap.py ${data} --work lightstage-dense-smplh --subs_vis 01 --ranges 0 800 1
+python3 apps/demo/mocap.py ${data} --work lightstage-dense-smpl --subs_vis 01 --ranges 0 800 1
 ```
 得到`output-smpl-3d\`文件夹下的全部文件。
 
