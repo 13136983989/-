@@ -26,14 +26,13 @@ python3 apps/preprocess/extract_keypoints.py ${data} --mode mp-holistic
 ## EasyMocap预估SMPL参数
 1. 运行
 ```
+#单目视频
 python3 apps/demo/mocap.py ${data} --work internet
+#多目视频 ranges:0-图片的最大值
+python3 apps/demo/mocap.py ${data} --work lightstage-dense-smplh --subs_vis 01 --ranges 0 800 1
 ```
 得到`output-smpl-3d\`文件夹下的全部文件。
-## EasyMocap获取图片mask
-```
-# render mask
-python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-d0.05 --ranges 0 1400 1
-```
+
 ## 脚本提取预估的SMPL参数获取params和vertives
 1. 用[脚本](https://github.com/zju3dv/neuralbody/blob/master/zju_smpl/easymocap_to_neuralbody.py)处理得到的`output-smpl-3d/smpl`文件夹下的.json文件，获取params和vertices
    ```
@@ -52,6 +51,11 @@ python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-
     #generate annots.npy
     python easymocap_to_neuralbody.py --input_dir {data_dir} --type annots
     ```
+## EasyMocap获取图片mask
+```
+# render mask
+python3 apps/postprocess/render.py ${data} --exp output-smpl-3d --mode instance-d0.05 --ranges 0 1400 1
+```
 ## 脚本获取lbs文件夹下的相关文件
 1. 用[脚本a](https://github.com/zju3dv/animatable_nerf/blob/master/tools/custom_dataset/prepare_blend_weights.py)和[脚本b](https://github.com/zju3dv/animatable_nerf/blob/master/tools/custom_dataset/prepare_lbs_meta.py)分别来获取和lbs相关的.npy文件
 
