@@ -24,10 +24,13 @@ data=/home/zhaozisong/EasyMocap/data/new/
 python3 apps/preprocess/extract_keypoints.py ${data} --mode mp-holistic
 ```
 ## EasyMocap预估SMPL参数
-1. 运行
+1. 提取extri和intri配置文件&&预估单目视频的SMPL参数
 ```
 #单目视频
 python3 apps/demo/mocap.py ${data} --work internet
+```
+2. 预估多目视频的SMPL参数
+```
 #多目视频 ranges:0-图片的最大值
 python3 apps/demo/mocap.py ${data} --work lightstage-dense-smpl --subs_vis 01 --ranges 0 800 1
 ```
