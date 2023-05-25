@@ -14,17 +14,17 @@ conda activate animatable_nerf
 ```
 # 步骤：
 ## EasyMocap预估图片关键点信息[教程参考网址](https://chingswy.github.io/easymocap-public-doc/quickstart/keypoints.html#mediapipe)
-推荐用Mediapipe:
+1. 先用设置data路径
+```
+data=/home/zhaozisong/EasyMocap/data/new/
+```
+2. 推荐用Mediapipe:
 ```
 #Run the detection of full body:
 python3 apps/preprocess/extract_keypoints.py ${data} --mode mp-holistic
 ```
 ## EasyMocap预估SMPL参数
-1. 先用设置data路径
-```
-data=/home/zhaozisong/EasyMocap/data/new/
-```
-2. 然后运行
+1. 运行
 ```
 python3 apps/demo/mocap.py ${data} --work internet
 ```
